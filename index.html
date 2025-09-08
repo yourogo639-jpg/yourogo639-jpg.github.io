@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>我的 AI 助手</title>
+  <style>
+    /* 这是一点点美化样式，让聊天窗口居中并占满屏幕 */
+    body, html { margin: 0; padding: 0; height: 100%; }
+    #app { width: 100%; height: 100%; }
+  </style>
+</head>
+<body>
+
+  <!-- 这是你的 Coze Bot 代码 -->
+  <div id="app"></div>
+  <script type="text/javascript">
+    var webSdkScript = document.createElement('script');
+    webSdkScript.src = 'https://lf-cdn.coze.cn/obj/unpkg/flow-platform/builder-web-sdk/0.1.0/dist/umd/index.js';
+    document.head.appendChild(webSdkScript);
+    webSdkScript.onload = function () {
+      new CozeWebSDK.AppWebSDK({
+        "token": "pat_vBT2GDvw7GWtRqtXm4Wy7s1euIFAghBzReWaiLl3OyPKYtPyQFg1tZvWaszlQZva", //  <-- ！！！在这里换上你自己的真实TOKEN！！！
+        "appId": "7547587164373434403",
+        "container": "#app",
+        "userInfo": {
+          "id": "",
+          "url": "",
+          "nickname": "访客"
+        }
+      });
+    }
+  </script>
+
+</body>
+</html>
+```5.  **保存并发布**：
+*   页面滚动到底部，点击 “Commit new file” 按钮。
+*   等待1-2分钟，让GitHub进行处理和部署。
